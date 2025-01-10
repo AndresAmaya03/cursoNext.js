@@ -9,7 +9,7 @@ export const metadata:Metadata = {
 
 export default function CounterPage() {
 
-
+  
 
   return (
     <div className="flex flex-col items-center justify-center text-black w-full h-full">

@@ -1,8 +1,16 @@
+import { SimpleWidget, WidgetsGrid } from "@/app/components";
+
+export const metadata = {
+  title: 'Admin dashboard',
+  description: 'dashboard page'
+}
 
 export default function MainPage() {
   return (
-    <div>
-      <h1>Hello Page</h1>
+    <div className="text-black">
+      <h1 className="mt-2 text-3xl">Dashboard</h1>
+      <span className="text-xl">Informacion general</span>
+      <WidgetsGrid></WidgetsGrid>
     </div>
   );
 }
