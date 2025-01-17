@@ -2,14 +2,15 @@
 
 import { FormEvent, useState } from "react";
 import { IoTrashOutline } from "react-icons/io5";
-import * as todosApi from '@/todos/helpers/todos'
+// import * as todosApi from '@/todos/helpers/todos'
 import { useRouter } from "next/navigation";
 import { Todo } from "@prisma/client";
 import { todo } from "node:test";
 import { deleteTodo } from '../helpers/todos';
+import { addTodo, deleteCompleted } from "../actions/todo-actions";
 
 export const NewTodo = () => {
-  const router = useRouter()
+  // const router = useRouter()
 
   const [description, setDescription] = useState('');
 
@@ -20,15 +21,14 @@ export const NewTodo = () => {
   }
 
   const createNewTodo = async(description:string) => {
-    const createTodo = await todosApi.createTodo(description)
+    const createTodo = await addTodo(description)
     setDescription('')
-    router.refresh()
   }
 
-  const deleteCompleted = async() => {
-    todosApi.deleteTodo()
-    router.refresh()
-  }
+  // const deleteCompleted = async() => {
+  //   todosApi.deleteTodo()
+  //   router.refresh()
+  // }
 
 
   return (
