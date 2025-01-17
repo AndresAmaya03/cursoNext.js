@@ -1,4 +1,4 @@
-import prisma from '@/app/lib/prisma'
+import prisma from '@/lib/prisma'
 import { NextResponse, NextRequest } from 'next/server'
 import * as yup from 'yup'
 
@@ -34,6 +34,20 @@ export async function POST(request: Request) {
         const todo = await prisma.todo.create({ data: {complete, description} })
 
         return NextResponse.json(todo)
+
+    } catch (error) {
+        return NextResponse.json(error, {status:400})
+    }
+
+
+}
+
+export async function DELETE(request: Request) {
+
+    try {
+        await prisma.todo.deleteMany({where: {complete: true}})
+
+        return NextResponse.json('Erased')
 
     } catch (error) {
         return NextResponse.json(error, {status:400})
