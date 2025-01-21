@@ -4,6 +4,9 @@ import { DiGithubAlt } from 'react-icons/di';
 import React from 'react'
 import { SidebarMenuItem } from './SidebarMenuItem';
 import { IoCalendarOutline, IoCheckboxOutline, IoListOutline } from 'react-icons/io5';
+import { TbCookieMan } from 'react-icons/tb';
+import { MdOutlineProductionQuantityLimits } from 'react-icons/md';
+
 
 const menuItems = [
     {
@@ -20,6 +23,16 @@ const menuItems = [
         path: '/dashboard/server-todos',
         icon: <IoListOutline size={30} />,
         title: 'Server Actions'
+    },
+    {
+        path: '/dashboard/cookies',
+        icon: <TbCookieMan size={30}/>,
+        title: 'Cookies'
+    },
+    {
+        path: '/dashboard/products',
+        icon: <MdOutlineProductionQuantityLimits size={30}/>,
+        title: 'Products'
     }
 ]
 
